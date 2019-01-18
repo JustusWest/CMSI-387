@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(int argc, char *argv[]) {
+
+int main() {
   printf("What is your name?\n");
   char input[25];
   char *name;
