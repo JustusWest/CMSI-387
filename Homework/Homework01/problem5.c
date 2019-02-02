@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
   if (code) {
     fprintf(stderr, "pthread_create failed with code %d\n", code);
   }
+
   while (1) {
     int c;
     c = getchar();
