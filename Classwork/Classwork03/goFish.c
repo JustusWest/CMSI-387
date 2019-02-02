@@ -59,8 +59,8 @@ int main() {
   int array_sum = sum(my_numbs, i);
   char* cat_string = concatinate(my_numbs, i);
 
-  printf("Sum is %d\n", array_sum);
-  printf("Average is %f\n", average(array_sum, i));
-  printf("String is %s\n", cat_string);
-  printf("Sevens is %d\n", sevens(cat_string));
+  printf("Sum is: %d\n", array_sum);
+  printf("Average is: %f\n", average(array_sum, i));
+  printf("Concatinated String is: %s\n", cat_string);
+  printf("There are %d sevens\n", sevens(cat_string));
 }
