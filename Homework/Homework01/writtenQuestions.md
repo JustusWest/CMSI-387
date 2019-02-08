@@ -17,3 +17,13 @@ Kevin Peters
 
 5. Yes, the child thread can print it’s message while the main thread is waiting for keyboard input. Yes, the main thread can read keyboard input and subsequently kill the child thread while the child thread is in the early seconds of one of it’s 5-second sleeps. With our program, the child thread is killed immediately when the keyboard input is read.
 6. Rate monotonic scheduling is the optimal fixed-priority scheduling
+![Gantt Charts](https://github.com/JustusWest/CMSI-387/blob/master/Homework/Homework01/IMG_1043.JPG)
+
+```
+1->3->6 -> 10    = 10/3       shortest is first in first out
+3->4->9 -> 13    = 13/3
+2->5->8 -> 13    = 13/3
+2->3->8 -> 11    = 11/3
+3->5->9 -> 14    = 14/3
+1->4->8 -> 12    = 12/3
+```
