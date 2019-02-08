@@ -16,3 +16,4 @@ Kevin Peters
     c)Method b is more efficient because it utilizes idle CPU time while thread A is doing its I/O operations. Thus, total time to run is significantly less.
 
 5. Yes, the child thread can print it’s message while the main thread is waiting for keyboard input. Yes, the main thread can read keyboard input and subsequently kill the child thread while the child thread is in the early seconds of one of it’s 5-second sleeps. With our program, the child thread is killed immediately when the keyboard input is read.
+6. Rate monotonic scheduling is the optimal fixed-priority scheduling
