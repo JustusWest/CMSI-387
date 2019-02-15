@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define t_slice = 40;
+#define t_slice = 40; 
 
 struct Thread {
   char* name;
