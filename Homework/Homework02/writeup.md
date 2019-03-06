@@ -4,7 +4,7 @@
    
 3. 
 
-
+7. The numbers `1047552` and `1047553` come from the index of the last page table, and the fact that each page table has 1024 frames. The bottom right nodes indicate the first two page frames of the last page table. Since the root has the range of 1024-2047, we can calculate the start index of the last page table from `1024 * 1023`. Thus it makes sense that the first and second index of the last page tabe are `1047552` and `1047553` respectively.
 
 9.
 
