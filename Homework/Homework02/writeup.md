@@ -4,6 +4,9 @@
    
 3. 
 
+6.
+The virtual addresses of the first and last four-byte words in page 6 are 24,576 and 28,668, respectively. These addresses map to the physcial addresses 12,288 and 16,380, respectively.
+
 7. The numbers `1047552` and `1047553` come from the index of the last page table, and the fact that each page table has 1024 frames. The bottom right nodes indicate the first two page frames of the last page table. Since the root has the range of 1024-2047, we can calculate the start index of the last page table from `1024 * 1023`. Thus it makes sense that the first and second index of the last page tabe are `1047552` and `1047553` respectively.
 
 8. We wrote a program (in this repo `problem8.c`) to access every 4096th element of a 1000000 byte array allocated to the heap. Using the `time` library to time the access time of each element, we receieve only `0.000000` for every access. In addition, the time read for the total time for all access combined also came out to 0. Making the byte array any larger results in the program being unable to run. Since we are unable to get non-zero values for these access times, we are unable to conclude if array size has an effect on access time.
