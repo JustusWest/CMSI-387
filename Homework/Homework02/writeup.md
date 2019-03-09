@@ -7,9 +7,9 @@
 
 4.-----
 
-5.  2 - Phase locking -> not possible () <br />
-    "Read Committed" isolation level is used -> possible () <br />
-    Snapshot Isolation -> not possible ()
+5.  2 - Phase locking -> not possible (needs to be acquired by a transaction before accessing the object) <br />
+    "Read Committed" isolation level is used -> possible (does not issue shared locks to prevent other transactions from modifying data read by the current transaction) <br />
+    Snapshot Isolation -> not possible (the snapshot of the database is consistent)
    
 6.
 The virtual addresses of the first and last four-byte words in page 6 are 24,576 and 28,668, respectively. These addresses map to the physcial addresses 12,288 and 16,380, respectively.
