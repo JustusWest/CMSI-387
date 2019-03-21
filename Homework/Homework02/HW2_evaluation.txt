@@ -1,0 +1,31 @@
+
+
+CMSI 387 Operating Systems
+Results for Homework #2 Evaluation
+==================================
+
+Question 1 mutex reversing:          5/ 5 points
+Question 2 auditing code change:     5/ 5 points
+Question 3 test program:            20/20 points
+Question 4 notifyall() addition:     0/10 points
+Question 5a 2-phase locking:         5/ 5 points
+Question 5b short read locks:        5/ 5 points
+Question 5c snapshot isolation:      5/ 5 points
+Question 6 virtual address xlate:    5/ 5 points
+Question 7 calc. explanation:        5/ 5 points
+Question 8 loop 4096 analysis:      10/20 points
+Question 9 fork() tree:             15/15 points
+
+Total 80 out of 100 = 80.00% which is an B-minus
+
+Comments:
+---------
+There is no main() in your BoundedBuffer.java file and there is no file
+"BoundedBufferTester.java" with a main() either.  I gave you partial
+credit for the two, 20 out of 30.
+
+Problem8.c doesn't compile.  This is because there is a type mismatch
+between the type double and clock_t.  If you cast the arguments to the
+"printf()" to double, it should work.  I took 5 points off for that.
+
+
