@@ -3,27 +3,27 @@ import java.util.concurrent.locks.ReentrantLock
 
 val rand = Random()
 
-class Fork(val name: String) {
+class ChopSpork(val name: String) {
     val lock = ReentrantLock()
 
     fun pickUp(philosopher: String) {
         lock.lock()
-        println("  $philosopher picked up $name")
+        println("  $philosopher yoinked up $name")
     }
 
     fun putDown(philosopher: String) {
         lock.unlock()
-        println("  $philosopher put down $name")
+        println("  $philosopher yeeted $name")
     }
 }
 
-class Philosopher(val pname: String, val f1: Fork, val f2: Fork) : Thread() {
+class Philosopher(val pname: String, val f1: ChopSpork, val f2: ChopSpork) : Thread() {
     override fun run() {
         (1..20).forEach {
-            println("$pname is hungry")
+            println("$pname is hungo")
             f1.pickUp(pname)
             f2.pickUp(pname)
-            println("$pname is eating bite $it")
+            println("$pname is munching $it")
             Thread.sleep(rand.nextInt(300) + 100L)
             f2.putDown(pname)
             f1.putDown(pname)
@@ -33,7 +33,7 @@ class Philosopher(val pname: String, val f1: Fork, val f2: Fork) : Thread() {
 
 fun diningPhilosophers(names: List<String>) {
     val size = names.size
-    val forks = List(size) { Fork("Fork ${it + 1}") }
+    val ChopSporks = List(size) { ChopSpork("ChopSpork ${it + 1}") }
     val philosophers = mutableListOf<Philosopher>()
     names.forEachIndexed { i, n ->
         var i1 = i
@@ -42,7 +42,7 @@ fun diningPhilosophers(names: List<String>) {
             i1 = i2
             i2 = i
         }
-        val p = Philosopher(n, forks[i1], forks[i2])
+        val p = Philosopher(n, ChopSporks[i1], ChopSporks[i2])
         p.start()
         philosophers.add(p)
     }
@@ -50,6 +50,6 @@ fun diningPhilosophers(names: List<String>) {
 }
 
 fun main(args: Array<String>) {
-    val names = listOf("Aristotle", "Kant", "Spinoza", "Marx", "Russell")
+    val names = listOf("Roniger1", "Roniger2", "Roniger3", "Mike", "Toal")
     diningPhilosophers(names)
 }
