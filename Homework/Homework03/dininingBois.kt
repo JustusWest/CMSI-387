@@ -6,50 +6,50 @@ val rand = Random()
 class ChopSpork(val name: String) {
     val lock = ReentrantLock()
 
-    fun pickUp(philosopher: String) {
+    fun yoink(philosopher: String) {
         lock.lock()
-        println("  $philosopher yoinked up $name")
+        println("  $philosopher yoinked $name")
     }
 
-    fun putDown(philosopher: String) {
+    fun yeet(philosopher: String) {
         lock.unlock()
         println("  $philosopher yeeted $name")
     }
 }
 
-class Philosopher(val pname: String, val f1: ChopSpork, val f2: ChopSpork) : Thread() {
+class Philosopher(val phil: String, val chopSpork1: ChopSpork, val chopSpork2: ChopSpork) : Thread() {
     override fun run() {
-        (1..20).forEach {
-            println("$pname is hungo")
-            f1.pickUp(pname)
-            f2.pickUp(pname)
-            println("$pname is munching $it")
+        for (it in 1..20) {
+            println("$phil is hungry")
+            chopSpork1.yoink(phil)
+            chopSpork2.yoink(phil)
+            println("$phil is munching $it")
             Thread.sleep(rand.nextInt(300) + 100L)
-            f2.putDown(pname)
-            f1.putDown(pname)
+            chopSpork2.yeet(phil)
+            chopSpork1.yeet(phil)
         }
     }
 }
 
 fun diningPhilosophers(names: List<String>) {
-    val size = names.size
-    val ChopSporks = List(size) { ChopSpork("ChopSpork ${it + 1}") }
     val philosophers = mutableListOf<Philosopher>()
-    names.forEachIndexed { i, n ->
-        var i1 = i
-        var i2 = (i + 1) % size
-        if (i2 < i1) {
-            i1 = i2
-            i2 = i
+    val length = names.size
+    val chopSporks = List(length) { ChopSpork("ChopSpork ${it + 1}") }
+    names.forEachIndexed(fun(i: Int, j: String) {
+        var index1: Int = i
+        var index2: Int = (i + 1) % length
+        if (index2 < index1) {
+            index1 = index2
+            index2 = i
         }
-        val p = Philosopher(n, ChopSporks[i1], ChopSporks[i2])
+        val p: Philosopher = Philosopher(j, chopSporks[index1], chopSporks[index2])
         p.start()
-        philosophers.add(p)
-    }
-    philosophers.forEach { it.join() }
+        philosophers += p
+    })
+    for (it in philosophers) it.join()
 }
 
 fun main(args: Array<String>) {
-    val names = listOf("Roniger1", "Roniger2", "Roniger3", "Mike", "Toal")
-    diningPhilosophers(names)
+    val bois: List<String> = listOf("Roniger", "Roniger Jr I", "Roniger Jr II", "Roniger Jr III", "Roniger Jr IV")
+    diningPhilosophers(bois)
 }
