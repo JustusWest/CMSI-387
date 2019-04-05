@@ -1,16 +1,13 @@
-#include <fcntl.h>
 #include <stdio.h>
-#include <sys/stat.h>
 #include <ctype.h>
+#include <pwd.h>
 int main() {
-    FILE *input = fopen("./beeMovie.txt", "r+");
-    FILE *output = fopen("./beeMovieUpper.txt", "w+");
+    FILE *input = fopen("/etc/passwd", "r");
     int currentChar;
     currentChar = fgetc(input);
     while(EOF != currentChar){
-        fputc(toupper(currentChar), output);
+        printf("%c", toupper(currentChar));
         currentChar = fgetc(input);
     }
     fclose(input);
-    fclose(output);
 }
