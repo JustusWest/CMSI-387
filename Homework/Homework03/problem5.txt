@@ -1,3 +1,0 @@
-The bounded buffer class would be good to use for the holding area. 
-
-...
