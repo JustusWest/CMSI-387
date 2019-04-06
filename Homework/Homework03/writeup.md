@@ -11,6 +11,7 @@ Our program avoids deadlock using the "resource hierarchy solution". The idea be
 See problem3.c
 
 ## Problem 4
+See problem4.c
 
 | file                      | size (bytes) | time (seconds) |
 | ------------------------- | ------------ | -------------- |
