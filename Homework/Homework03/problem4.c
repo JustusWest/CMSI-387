@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     /* The file descriptor. */
     int fd;
     /* Information about the file. */
@@ -19,9 +19,12 @@ int main() {
     /* The memory-mapped thing itself. */
     const char *mapped;
     int i;
+    if (!argv[1]) { printf("Must provide file name to search for x's\n");
+  return 2;}
+    const char *fname = argv[1];
 
     /* Open the file for reading. */
-    fd = open("beeMovie.txt", O_RDONLY);
+    fd = open(fname, O_RDONLY);
 
     /* Get the size of the file. */
     status = fstat(fd, &s);
@@ -34,11 +37,14 @@ int main() {
     for (i = 0; i < size; i++) {
         char c;
 
-        if (c == "x") {
-            printf("worked");
+        c = mapped[i];
+        // printf("%c", c);
+        if (c == 'x') {
+            printf("Found x in %s at character %d\n", fname, i);
+            return 0;
         }
-        
-    }
 
-    return 0;
+    }
+    printf("No x found in file %s\n", fname);
+    return 1;
 }
