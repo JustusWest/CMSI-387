@@ -13,6 +13,7 @@ Our program avoids deadlock using the "resource hierarchy solution". The idea be
 | beeMovie.txt              | 55,317       | 0.000200       |
 | extremelyLongWithX.txt    | 15,125,684   | 0.029887       |
 | extremelyLongWithOutX.txt | 15,125,682   | 0.029818       |
+| longInMiddle.txt          | 15,125,683   | 0.012530       |
 
 ## Problem 5
 
