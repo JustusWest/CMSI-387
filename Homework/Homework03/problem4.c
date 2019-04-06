@@ -1,12 +1,12 @@
-#include <sys/stat.h>
-#include <sys/mman.h>
+#include <ctype.h>
 #include <errno.h>
-#include <stdarg.h>
-#include <string.h>
 #include <fcntl.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
 
 int main(int argc, char *argv[]) {
     /* The file descriptor. */
@@ -19,8 +19,10 @@ int main(int argc, char *argv[]) {
     /* The memory-mapped thing itself. */
     const char *mapped;
     int i;
-    if (!argv[1]) { printf("Must provide file name to search for x's\n");
-  return 2;}
+    if (!argv[1]) {
+        printf("Must provide file name to search for x's\n");
+        return 2;
+    }
     const char *fname = argv[1];
 
     /* Open the file for reading. */
@@ -43,7 +45,6 @@ int main(int argc, char *argv[]) {
             printf("Found x in %s at character %d\n", fname, i);
             return 0;
         }
-
     }
     printf("No x found in file %s\n", fname);
     return 1;
