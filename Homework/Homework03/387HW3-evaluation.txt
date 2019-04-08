@@ -1,0 +1,33 @@
+
+Evaluation for Homework 3
+CMSI 387 - Operating Systems
+============================
+
+Question 1: dining philosophers program:   20.00 points out of 20 possible
+Question 2: why immune explanation     :   10.00 points out of 10 possible
+Question 3: file processing "C" program:   20.00 points out of 20 possible
+Question 4: mmap program "C" program   :   20.00 points out of 20 possible
+Question 5: appropriate class explained:   10.00 points out of 10 possible
+
+Total possible points:     80.00 points
+           your score:     80.00 points
+       homework total:     80.00/80.00 = 100.00% which is an A-plus
+
+Comments:
+---------
+I laughed out loud at the "ChopSpork" class.  You guys are SO inventive, it's
+awesome....
+
+Everything else is spot-on!
+
+Nice work!
+
+Semester so far:
+
+   homework01 @ 10%:  100.00% = 10.00 points
+   homework02 @ 10%:   90.00% =  9.00 points
+   homework03 @ 10%:  100.00% = 10.00 points
+   particip.  @ 10%:  100.00% = 10.00 points
+   proj pt. 1 @ 20%:  100.00% = 20.00 points
+
+       total points:  59.00 out of 60.00 = 98.34% which is an A-plus
